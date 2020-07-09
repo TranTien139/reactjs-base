@@ -1,2 +1,3 @@
-yarn install 
-npm start
+```yarn install ```
+
+```npm start```
