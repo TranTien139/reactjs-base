@@ -1,6 +1,6 @@
 import {GET_LOGIN, GET_LOGOUT} from './actionTypes'
 
-export const getLogin = (email, password) => {
+export const getLogin = (email: string, password: string) => {
     return {
         type: GET_LOGIN,
         email: email,

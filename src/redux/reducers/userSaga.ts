@@ -1,5 +1,5 @@
 import {GET_LOGIN, GET_LOGOUT, LOGIN_RECEIVED} from '../actions/actionTypes'
-const reducerUser = (state = {}, action) => {
+const reducerUser = (state = {}, action: any) => {
   switch (action.type) {
     case GET_LOGIN:
       return { ...state, data: action.data, isLogin: true, loading: false };

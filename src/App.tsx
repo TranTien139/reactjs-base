@@ -3,23 +3,24 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import 'antd/dist/antd.css';
 import './static/custom.scss';
 
+// @ts-ignore
 import {BrowserRouter as Router, Route} from 'react-router-dom'
 
+import Layout from './partials/layout'
 import Home from './pages/home'
 import Demo1 from './pages/demo1'
 import Demo from './pages/demo'
 
-
-import { logger } from 'redux-logger';
-import reducer from './redux/reducers/index';
+// @ts-ignore
+import { logger } from 'redux-logger'
+import reducer from './redux/reducers/index'
+// @ts-ignore
 import {Provider} from 'react-redux'
-import { createStore, applyMiddleware } from 'redux';
-import createSagaMiddleware from 'redux-saga';
-import rootSaga from './redux/sagas';
-
+import { createStore, applyMiddleware } from 'redux'
+import createSagaMiddleware from 'redux-saga'
+import rootSaga from './redux/sagas'
 
 const sagaMiddleware = createSagaMiddleware();
-
 
 const store = createStore(
   reducer,
@@ -32,11 +33,11 @@ function App() {
   return (
     <Provider store={store}>
         <Router>
-          <div>
+          <Layout>
             <Route exact path="/" component={Home} />
             <Route exact path="/demo/:id" component={Demo1} />
             <Route exact path="/demo" component={Demo} />
-          </div>
+          </Layout>
         </Router>
     </Provider>
   );
